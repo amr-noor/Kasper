@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="./css/kasper.css"> -->
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <title>Kasper Template Two</title>
+  <link rel="icon" href="https://amr-noor.github.io/Leon/Images/pic_logo.png" type="image/x-icon" />
+    
+  <style>
+      /* Start Variables */
+      :root {
+        --main-color: #19c8fa;
+        --transparent-color: rgb(15 116 143 / 70%);
+        --section-padding: 100px;
+      }
+      /* End Variables */
+      /* Start Global Rules */
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Open Sans', sans-serif;
+        font-family: 'Work Sans', sans-serif;
+      }
+      ul {
+        list-style: none;
+      }
+      .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      /* Small */
+      @media (min-width: 768px) {
+        .container {
+            width: 750px;
+        }
+      }
+      /* Medium */
+      @media (min-width: 992px) {
+        .container {
+            width: 970px;
+        }
+      }
+      /* Large */
+      @media (min-width: 1200px) {
+        .container {
+            width: 1170px;
+        }
+      }
+      /* End Global Rules */
+      /* Start Components */
+      section {
+        padding-block: var(--section-padding);
+        
+        &:nth-child(2n) {
+          background: linear-gradient(to right, #151515 0px, #151515 50px, #5f5f5f 50px, #5f5f5f 70px, #151515 70px, #151515 120px);
+          background-size: 120px;
+        }
+      }
+      
+      .main-heading {
+        text-align: center;
+      }
+      .main-heading h2 {
+        font-weight: normal;
+        font-size: 40px;
+        position: relative;
+        margin-bottom: 70px;
+        text-transform: uppercase;
+      }
+      .main-heading h2::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2px;
+        background-color: #333;
+        bottom: -30px;
+        width: 120px;
+      }
+      .main-heading h2::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 2px solid #333;
+        bottom: -38px;
+        background-color: white;
+      }
+      .main-heading p {
+        width: 550px;
+        margin: 0 auto 100px;
+        max-width: 100%;
+        line-height: 2;
+        color: #777;
+      }
+      /* End Components */
+      /* Start Header */
+      header {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        z-index: 2;
+        backdrop-filter: blur(20px);
+      }
+      header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        min-height: 97px;
+      }
+      header .container::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: calc(100% - 30px);
+        background-color: #a2a2a2;
+        bottom: 0;
+        left: 15px;
+      }
+      header .logo img {
+        height: 30px;
+      }
+      header nav {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      header nav .toggle-menu {
+        color: white;
+        font-size: 22px;
+      }
+      @media (min-width: 768px) {
+        header nav .toggle-menu {
+            display: none;
+        }
+      }
+      header nav ul {
+        display: flex;
+      }
+      @media (max-width: 767px) {
+        header nav ul {
+            display: none;
+        }
+        header nav:hover ul {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        header nav ul li a {
+            padding: 15px !important;
+        }
+      }
+      header nav ul li a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.3s;
+        padding: 40px 10px;
+        position: relative;
+        z-index: 2;
+      }
+      header nav ul li a.active,
+      header nav ul li a:hover {
+        color: var(--main-color);
+        border-bottom: 1px solid var(--main-color);
+      }
+      
+      header form {
+        position: relative;
+        margin-left: 10px;
+        padding-left: 10px;
+        border-left: 1px solid #a2a2a2;
+        
+        & label {
+          color: #fff;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 22px;
+        }
+        
+        & input {
+          width: 40px;
+          height: 40px;
+          border-radius: 40px;
+          border: none;
+          outline: none;
+          padding-left: 40px;
+          background-color: #434343;
+          color: #fff;
+          display: block;
+          transition: 0.3s;
+          
+          &:hover {
+            width: min(200px, 35vw);
+            padding-right: 10px;
+          }
+        }
+      }
+
+      /* End Header */
+      /* Start Landing */
+      .landing {
+        min-height: 100vh;
+        background-color: #1f2021;
+        background-image: url(https://png.pngtree.com/background/20250115/original/pngtree-an-owl-sitting-in-a-dark-environment-with-eyes-that-are-picture-image_15320183.jpg);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      .landing .overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0 0 0 / 60%);
+      }
+      
+      .landing .text {
+        display: flex;
+        gap: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: min(700px, 100%);
+        scroll-behavior: smooth;
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+        scroll-marker-group: after;
+        
+        &::scroll-marker-group {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 30px;
+          display: flex;
+        }
+        
+        &::-webkit-scrollbar { display: none; }
+        
+        &::scroll-button(right),
+        &::scroll-button(left) {
+          content: "\f104";
+          font-family: var(--fa-style-family-classic);
+          font-weight: bold;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: transparent;
+          color: #ddd;
+          border: none;
+          cursor: pointer;
+          font-size: 50px;
+          font-weight: bold;
+        }
+        
+        &::scroll-button(right):disabled,
+        &::scroll-button(left):disabled {
+          cursor: auto;
+          opacity: .5;
+        }
+        
+        &::scroll-button(right) {
+          content: "\f105";
+          right: 0;
+        }
+        
+        & .content {
+          min-width: 100%;
+          padding: 50px;
+          background: var(--transparent-color);
+          color: #fff;
+          scroll-snap-align: start;
+          
+          &::scroll-marker {
+            content: "";
+            width: 20px;
+            height: 20px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: .5s;
+          }
+          
+          &::scroll-marker:target-current {
+            background: var(--main-color);
+            border-color: var(--main-color);
+          }
+        }
+      }
+      
+      .landing .text .content h2 {
+        font-size: 32px;
+        font-weight: normal;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+      .landing .text .content p {
+        font-size: 14px;
+        line-height: 2;
+      }
+      /* End Landing */
+      /* Start Services */
+      @media (min-width: 768px) {
+        .services .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            grid-column-gap: 40px;
+            grid-row-gap: 60px;
+        }
+      }
+      #services .srv-box {
+        display: flex;
+      }
+      #services .srv-box i {
+        margin-right: 50px;
+      }
+      @media (max-width: 767px) {
+        #services .srv-box {
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        #services .srv-box i {
+            margin: 0 0 30px;
+        }
+      }
+      #services .srv-box h3 {
+        margin-bottom: 30px;
+        color: var(--main-color);
+      }
+      #services .srv-box p {
+        line-height: 2;
+        color: #777;
+      }
+      /* End Services */
+      
+      /* desgin */
+      #desgin {
+        height: 600px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        
+        & .image, .text {
+          flex: 1;
+        }
+        
+        & .image {
+          text-align: center;
+          
+          & img {
+            position: relative;
+            bottom: -150px;
+          }
+          
+          @media (width <= 767px) {
+            display: none;
+          }
+        }
+        
+        & .text {
+          color: #fff;
+          background: var(--transparent-color);
+          padding: 50px;
+          
+          & h2 {
+            font-size: 32px;
+            font-weight: normal;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+          }
+          
+          & ul li {
+            padding: 15px 0;
+            
+            &:before {
+              font-family: "Font Awesome 5 Free";
+              content: "\f108";
+              font-weight: 900;
+              margin-right: 20px;
+            }
+          }
+        }
+      }
+      
+      /* portfolio */
+      #portfolio {
+        & ul {
+          display: flex;
+          justify-content: center;
+          
+          & li {
+            padding: 10px;
+            
+            &:first-child {
+              background: var(--main-color);
+              color: #fff;
+            }
+          }
+        }
+        
+        & .images {
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 60px;
+          
+          & .box {
+            position: relative;
+            overflow: hidden;
+            flex-basis: 100%;
+            
+            @media (width >= 768px) {
+              flex-basis: 50%;
+            }
+            
+            @media (width >= 1199px) {
+              flex-basis: 25%;
+            }
+            
+            & div {
+              position: absolute;
+              bottom: -100%;
+              transform: rotate(-50deg);
+              background: #fff;
+              padding: 20px;
+              margin: 10px;
+              width: calc(100% - 20px);
+              border-radius: 10px;
+              z-index: 1;
+              transition: .5s;
+              
+              & h4 {
+                font-weight: normal;
+                margin-bottom: 10px;
+              }
+              
+              & p { color: var(--main-color); }
+            }
+            
+            & img {
+              max-width: 100%;
+              width: 100%;
+              aspect-ratio: 8 / 5;
+              transition: .5s;
+            }
+            
+            &:hover div {
+              transform: rotate(0);
+              bottom: 0;
+            }
+          }
+        }
+        
+        & a {
+          background: var(--main-color);
+          color: #fff;
+          padding: 15px 20px;
+          display: block;
+          width: fit-content;
+          margin: 30px auto;
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+      }
+      
+      /* video */
+      #video {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(https://cdn.dribbble.com/userupload/21754386/file/original-b01dac9e844ff6ead83d7bd57afc6d87.gif);
+        background-size: cover;
+        
+        & div {
+          text-align: center;
+          width: 100%;
+          padding: 50px;
+          margin-block: 50px;
+          background: var(--transparent-color);
+          color: #fff;
+          
+          & h2 {
+            margin: 0 0 30px;
+            font-weight: normal;
+            text-transform: uppercase;
+          }
+          
+          & p { margin-bottom: 30px; }
+          
+          & button {
+            background: #000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            text-transform: uppercase;
+          }
+        }
+      }
+      
+      /* about */
+      #about {
+        text-align: center;
+        overflow: hidden;
+        
+        & img {
+          position: relative;
+          bottom: -250px;
+          margin-top: -250px;
+          max-width: 100%;
+          
+          @media (width <= 767px) {
+            bottom: -150px;
+            margin-top: -150px;
+          }
+        }
+      }
+      
+      /* stats */
+      #stats {
+        text-align: center;
+        
+        & .container {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        
+        & .box {
+          color: #fff;
+          padding: 50px;
+          background: var(--transparent-color);
+          
+          @media (width <= 767px) { flex-basis: 100%; }
+          @media (width >= 768px) { flex-basis: 50%; }
+          @media (width >= 992px) { flex-basis: 25%; }
+          
+          & i {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: #000;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+          }
+          
+          & div {
+            font-size: 50px;
+            font-weight: bold;
+            margin: 0 0 30px;
+          }
+        }
+      }
+      
+      /* skills */
+      #skills .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+        & .content {
+          display: flex;
+          align-items: center;
+          margin-bottom: 30px;
+          
+          & img {
+            border-radius: 50%;
+            background: #ddd;
+            margin-right: 50px;
+            aspect-ratio: 1;
+          }
+          
+          & .text {
+            line-height: 1.8;
+            border-bottom: 1px solid #ccc;
+            
+            & p {
+              color: #777;
+              text-align: right;
+              font-size: 14px;
+            }
+          }
+          
+          @media (width <= 767px) {
+            flex-direction: column;
+            text-align: center;
+            
+            & img {
+              margin: 0 auto 20px;
+            }
+          }
+        }
+        
+        & .prog {
+          margin-bottom: 40px;
+          
+          & div {
+            background: #dedadc;
+            height: 30px;
+          }
+          
+          & h4 {
+            margin-bottom: 15px;
+            font-weight: normal;
+            text-transform: uppercase;
+          }
+          
+          & span {
+            --prog: attr(data-progress %);
+            --prog-txt: attr(data-progress);
+            display: block;
+            position: relative;
+            width: var(--prog);
+            height: 100%;
+            background: var(--main-color);
+            
+            &:before {
+              content: var(--prog-txt) "%";
+              position: absolute;
+              top: -40px;
+              right: -20px;
+              background: #000;
+              color: #fff;
+              padding: 4px 0;
+              width: 40px;
+              text-align: center;
+            }
+            
+            &:after {
+              content: "";
+              position: absolute;
+              top: -15px;
+              right: -8px;
+              border: 8px solid;
+              border-color: #000 transparent transparent transparent;
+            }
+          }
+        }
+        
+        & > div {
+          & h3 {
+            margin: 0 0 30px;
+            font-weight: normal;
+            text-align: center;
+            text-transform: uppercase;
+          }
+          
+          & > p {
+            color: #777;
+            line-height: 2;
+            text-align: center;
+            margin-bottom: 60px;
+          }
+          
+          @media (width >= 992px) {
+            flex-basis: 45%;
+          }
+        }
+      }
+      
+      /* quote */
+      #quote {
+        background-image: url(https://www.nps.gov/bibe/learn/nature/images/bibe_nightsky_holdiges_2x1r_960w.jpg?maxwidth=1300&autorotate=false&quality=78&format=webp);
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        color: #fff;
+        
+        & q {
+          display: block;
+          font-size: 30px;
+          margin-bottom: 20px;
+        }
+      }
+      
+      /* pricing */
+      #pricing .container {
+        & p {
+          text-align: center;
+          margin: 50px auto 30px;
+          font-size: 20px;
+        }
+        
+        & > a {
+          display: block;
+          width: fit-content;
+          margin: auto;
+          background: var(--main-color);
+          color: #fff;
+          padding: 15px 30px;
+          text-decoration: none;
+        }
+        
+        & .plans {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 30px;
+          
+          & > div {
+            background: #fcfcfc;
+            text-align: center;
+            padding: 30px 0;
+            border-block: 1px solid var(--main-color);
+            
+            & a {
+              display: block;
+              width: fit-content;
+              padding: 10px 20px;
+              text-decoration: none;
+              border: 1px solid var(--main-color);
+              color: var(--main-color);
+              margin: 30px auto 0;
+            }
+          }
+          
+          & h3 {
+            font-weight: normal;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+          }
+          
+          & span {
+            display: block;
+            font-size: 60px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            
+            & sup, sub {
+              font-size: 20px;
+              font-weight: normal;
+            }
+            
+            & sup { vertical-align: 20px; }
+          }
+          
+          & ul {
+            border-block: 1px solid var(--main-color);
+            
+            & li {
+              padding: 20px;
+              
+              /* &:not(:last-child) {
+                width: 120px;
+                text-align: center;
+                margin: auto;
+                border-bottom: 1px solid var(--main-color);
+              } */
+            }
+          }
+        }
+      }
+      
+      /* subscribe */
+      #sub .container {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        color: #fff;
+        
+        & form {
+          --height: 50px;
+          display: flex;
+          align-items: center;
+          border: 1px solid #fff;
+          
+          & label { margin-left: 10px; }
+          
+          & input {
+            border: none;
+            outline: none;
+            height: var(--height);
+            color: #fff;
+          }
+          
+          & input[type=email] {
+            background: none;
+            padding: 10px;
+            width: min(50vw, 400px);
+            caret-color: var(--main-color);
+            
+            &::placeholder {
+              color: #fff;
+            }
+          }
+          
+          & input[type=submit] {
+            background: var(--main-color);
+            padding: 10px;
+            text-transform: uppercase;
+          }
+        }
+        
+        & p { line-height: 2; }
+        
+        @media (width <= 991px) { flex-direction: column; }
+      }
+      
+      /* contact */
+      #contact .content {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        
+        & form {
+          flex-basis: 70%;
+          
+          & input:not([type=submit]), textarea {
+            display: block;
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-bottom: 30px;
+            width: 100%;
+            outline: none;
+          }
+          
+          & textarea {
+            height: 200px;
+            resize: none;
+          }
+          
+          input[type=submit] {
+            display: flex;
+            margin-left: auto;
+            background: var(--main-color);
+            color: #fff;
+            padding: 20px;
+            border: none;
+            outline: none;
+            text-transform: uppercase;
+            cursor: pointer;
+          }
+        }
+        
+        & .info {
+          flex-basis: 25%;
+          
+          & h4 {
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            
+            &:last-of-type {
+              margin-top: 90px;
+            }
+          }
+          
+          & span {
+            display: block;
+            color: #777;
+            margin-bottom: 10px;
+          }
+          
+          & address { color: #777; }
+        }
+        
+        @media (width <= 767px) {
+          flex-direction: column-reverse;
+          /* order: -1; */
+          text-align: center;
+        }
+      }
+      
+      /* footer */
+      footer {
+        padding-block: calc(var(--section-padding) / 2);
+        background: linear-gradient(to right, #151515 0px, #151515 50px, #5f5f5f 50px, #5f5f5f 70px, #151515 70px, #151515 120px);
+        background-size: 120px;
+        color: #fff;
+        text-align: center;
+        
+        & p:not(.copy) {
+          text-transform: uppercase;
+          padding: 20px;
+          margin: 20px auto;
+          border-bottom: 1px solid #fff;
+          width: fit-content;
+          font-size: 22px;
+        }
+        
+        & i {
+          margin-inline: 15px;
+        }
+        
+        & .copy {
+          margin-top: 50px;
+          
+          & span {
+            font-weight: bold;
+            color: var(--main-color);
+          }
+        }
+      }
+  </style>
+</head>
+<body>
+    <!-- Start Header -->
+    <header>
+        <div class="container">
+            <a href="https://www.graphberry.com/item/kasper-one-page-psd-template" class="logo">
+                <img src="https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/logo.png" alt="Logo">
+            </a>
+            <nav>
+                <i class="fas fa-bars toggle-menu"></i>
+                <ul>
+                    <li><a class="active" href="#">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <form>
+              <label for="search">
+                <i class="fas fa-search"></i>
+              </label>
+              <input id="search" placeholder="Search..">
+            </form>
+        </div>
+    </header>
+    <!-- End Header -->
+    <!-- Start Landing -->
+    <div class="landing">
+        <div class="overlay"></div>
+        <div class="text">
+            <div class="content">
+                <h2>Hello World!</h2>
+                <p>
+                    Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam.
+                </p>
+            </div>
+            <div class="content">
+                <h2>We Are Kasper.</h2>
+                <p>
+                    Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam.
+                </p>
+            </div>
+            <div class="content">
+                <h2>We Make Art.</h2>
+                <p>
+                    Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- End Landing -->
+    <!-- Start Services -->
+    <section id="services">
+        <div class="container">
+            <div class="main-heading">
+                <h2>Services</h2>
+                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+            </div>
+            <div class="services-container">
+                <div class="srv-box">
+                    <i class="fas fa-desktop fa-3x"></i>
+                    <div class="text">
+                        <h3>Vorem amet intuitive</h3>
+                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+                    </div>
+                </div>
+                <div class="srv-box">
+                    <i class="fas fa-cog fa-3x"></i>
+                    <div class="text">
+                        <h3>Vorem amet intuitive</h3>
+                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+                    </div>
+                </div>
+                <div class="srv-box">
+                    <i class="fas fa-pencil-ruler fa-3x"></i>
+                    <div class="text">
+                        <h3>Vorem amet intuitive</h3>
+                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+                    </div>
+                </div>
+                <div class="srv-box">
+                    <i class="fas fa-camera fa-3x"></i>
+                    <div class="text">
+                        <h3>Vorem amet intuitive</h3>
+                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Services -->
+    
+    <!-- desgin -->
+    <section id="desgin">
+      <div class="image">
+        <img width="350" src="https://static.vecteezy.com/system/resources/previews/019/859/717/non_2x/realistic-models-smartphone-with-transparent-screens-smartphone-mockup-collection-device-front-view-3d-mobile-phone-with-shadow-transparent-background-illustration-png.png" alt="mobile" />
+      </div>
+      <div class="text">
+        <h2>Our desgin comes with...</h2>
+        <ul>
+          <li>Responsive desgin</li>
+          <li>Modern and clean desgin</li>
+          <li>Clean code</li>
+          <li>Browser friendly</li>
+        </ul>
+      </div>
+    </section>
+    
+    <!-- portfolio -->
+    <section id="portfolio">
+      <div class="container">
+        <div class="main-heading">
+          <h2>Portfolio</h2>
+          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+        </div>
+        <ul>
+          <li>All</li>
+          <li>App</li>
+          <li>Photo</li>
+          <li>Web</li>
+          <li>Print</li>
+        </ul>
+        <div class="images">
+          <div class="box">
+            <img width="400" src="https://picsum.photos/400/250?random=1.webp" alt="" />
+            <div>
+              <h4>Awesome image</h4>
+              <p>Photography</p>
+            </div>
+          </div>
+          <div class="box">
+            <img width="400" src="https://picsum.photos/400/250?random=2.webp" alt="" />
+            <div>
+              <h4>Awesome image</h4>
+              <p>Photography</p>
+            </div>
+          </div>
+          <div class="box">
+            <img width="400" src="https://picsum.photos/400/250?random=3.webp" alt="" />
+            <div>
+              <h4>Awesome image</h4>
+              <p>Photography</p>
+            </div>
+          </div>
+          <div class="box">
+            <img width="400" src="https://picsum.photos/400/250?random=4.webp" alt="" />
+            <div>
+              <h4>Awesome image</h4>
+              <p>Photography</p>
+            </div>
+          </div>
+          <div class="box">
+            <img width="400" src="https://picsum.photos/400/250?random=5.webp" alt="" />
+            <div>
+              <h4>Awesome image</h4>
+              <p>Photography</p>
+            </div>
+          </div>
+          <div class="box">
+            <img width="400" src="https://picsum.photos/400/250?random=6.webp" alt="" />
+            <div>
+              <h4>Awesome image</h4>
+              <p>Photography</p>
+            </div>
+          </div>
+          <div class="box">
+            <img width="400" src="https://picsum.photos/400/250?random=7.webp" alt="" />
+            <div>
+              <h4>Awesome image</h4>
+              <p>Photography</p>
+            </div>
+          </div>
+          <div class="box">
+            <img width="400" src="https://picsum.photos/400/250?random=8.webp" alt="" />
+            <div>
+              <h4>Awesome image</h4>
+              <p>Photography</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#">More</a>
+    </section>
+    
+    <!-- video -->
+    <section id="video">
+      <div>
+        <h2>Super awesome video here</h2>
+        <p>It's all you need</p>
+        <button>See more</button>
+      </div>
+    </section>
+    
+    <!-- about -->
+    <section id="about">
+      <div class="container">
+        <div class="main-heading">
+          <h2>About us</h2>
+          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+        </div>
+        <img width="600" src="https://static.vecteezy.com/system/resources/previews/056/227/180/non_2x/blank-tablet-with-transparent-background-for-digital-display-and-app-showcase-design-png.png" alt="image" />
+      </div>
+    </section>
+    
+    <!-- stats -->
+    <section id="stats">
+      <div class="container">
+        <div class="box">
+          <i class="fas fa-mug-hot"></i>
+          <div data-count="1236">0</div>
+          <p>Coffee drinks</p>
+        </div>
+        <div class="box">
+          <i class="fas fa-folder"></i>
+          <div data-count="256">0</div>
+          <p>Completed projects</p>
+        </div>
+        <div class="box">
+          <i class="fas fa-envelope"></i>
+          <div data-count="1743">0</div>
+          <p>Mail sent</p>
+        </div>
+        <div class="box">
+          <i class="fas fa-trophy"></i>
+          <div data-count="17">0</div>
+          <p>Awards recived</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- skills -->
+    <section id="skills">
+      <div class="container">
+        <div class="box">
+          <h3>Testimonials</h3>
+          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+          <div class="content">
+            <img width="100" height="100" src="https://www.gravatar.com/avatar/d9db18746e82656fe0395065a39b8b22?s=200" alt="" />
+            <div class="text">
+              Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+              <p>Amr Nour, CEO</p>
+            </div>
+          </div>
+          <div class="content">
+            <img width="100" height="100" src="https://www.gravatar.com/avatar/d9db18746e82656fe0395065a39b8b22?s=200" alt="" />
+            <div class="text">
+              Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+              <p>Osama Elzero, CEO Assistant</p>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <h3>Skills</h3>
+          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+          <div class="prog">
+            <h4>Figma</h4>
+            <div>
+              <span data-progress="70"></span>
+            </div>
+          </div>
+          <div class="prog">
+            <h4>HTML &amp; CSS</h4>
+            <div>
+              <span data-progress="90"></span>
+            </div>
+          </div>
+          <div class="prog">
+            <h4>JavaScript</h4>
+            <div>
+              <span data-progress="85"></span>
+            </div>
+          </div>
+          <div class="prog">
+            <h4>NodeJs</h4>
+            <div>
+              <span data-progress="70"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- quote -->
+    <section id="quote">
+      <div class="container">
+        <q>No one will want to hear your suffering until you succeed</q>
+        <span>Amr Mohamed</span>
+      </div>
+    </section>
+    
+    <!-- pricing -->
+    <section id="pricing">
+      <div class="container">
+        <div class="main-heading">
+          <h2>Pricing</h2>
+          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+        </div>
+        <div class="plans">
+          <div>
+            <h3>Basic</h3>
+            <span>
+              <sup>$</sup>
+              19
+              <sub>/Mo</sub>
+            </span>
+            <ul>
+              <li>Feature 1</li>
+              <li>Feature 2</li>
+              <li>Feature 3</li>
+              <li>Feature 4</li>
+            </ul>
+            <a href="#">Buy now</a>
+          </div>
+          <div>
+            <h3>Premium</h3>
+            <span>
+              <sup>$</sup>
+              29
+              <sub>/Mo</sub>
+            </span>
+            <ul>
+              <li>Feature 1</li>
+              <li>Feature 2</li>
+              <li>Feature 3</li>
+              <li>Feature 4</li>
+            </ul>
+            <a href="#">Buy now</a>
+          </div>
+          <div>
+            <div class="head">
+              <h3>Pro</h3>
+              <span>
+                <sup>$</sup>
+                39
+                <sub>/Mo</sub>
+              </span>
+            </div>
+            <ul>
+              <li>Feature 1</li>
+              <li>Feature 2</li>
+              <li>Feature 3</li>
+              <li>Feature 4</li>
+            </ul>
+            <a href="#">Buy now</a>
+          </div>
+          <div>
+            <h3>Platinum</h3>
+            <span>
+              <sup>$</sup>
+              49
+              <sub>/Mo</sub>
+            </span>
+            <ul>
+              <li>Feature 1</li>
+              <li>Feature 2</li>
+              <li>Feature 3</li>
+              <li>Feature 4</li>
+            </ul>
+            <a href="#">Buy now</a>
+          </div>
+        </div>
+        <p>Contact us if you have special request</p>
+        <a href="#">Contact us</a>
+      </div>
+    </section>
+    
+    <!-- subscribe -->
+    <section id="sub">
+      <div class="container">
+        <form action="#">
+          <label for="sub">
+            <i class="far fa-envelope fa-lg"></i>
+          </label>
+          <input type="email" name="email" id="sub" placeholder="Your email" />
+          <input type="submit" value="Subscribe" />
+        </form>
+        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+      </div>
+    </section>
+    
+    <!-- contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="main-heading">
+          <h2>Contact</h2>
+          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+        </div>
+        <div class="content">
+          <form action="#">
+            <input type="text" name="name" placeholder="Your name" />
+            <input type="email" name="email" placeholder="Your email" />
+            <textarea name="message" placeholder="Your message"></textarea>
+            <input type="submit" value="Send message" />
+          </form>
+          <div class="info">
+            <h4>Get in touch</h4>
+            <span>+00 123.456.789</span>
+            <span>+00 123.456.789</span>
+            <h4>Where we are</h4>
+            <address>Everywhere</address>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- footer -->
+    <footer>
+      <img src="https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/logo.png" alt="logo" />
+      <p>We are social</p>
+      <div>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fas fa-home"></i>
+        <i class="fab fa-linkedin"></i>
+      </div>
+      <p class="copy">&copy; 2025 <span>Kasper</span> All right reserved</p>
+    </footer>
+    <script>
+      // counter
+      let container = document.querySelector("#stats"),
+      counters = document.querySelectorAll("#stats .box div"),
+      active = 0;
+      
+      window.onscroll = () => {
+        if (pageYOffset > container.offsetTop - container.offsetHeight - 200 && active == 0) {
+          counters.forEach(counter => {
+            counter.innerText = 0;
+            let count = 0,
+            
+            update = () => {
+              let target = parseInt(counter.dataset.count);
+              
+              if (count < target) {
+                count++;
+                counter.innerText = count;
+                
+                setTimeout(update, 10);
+              } else {
+                counter.innerText = target;
+              }
+            }
+            
+            update();
+            active = 1;
+          });
+        } /*else if (pageYOffset < container.offsetTop - container.offsetHeight - 500 || pageYOffset == 0 && active == 1) {
+          counters.forEach(counter => {
+            counter.innerText = 0;
+          });
+          
+          active = 0;
+        }*/
+      }
+    </script>
+</body>
+</html>
